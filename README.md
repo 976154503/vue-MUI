@@ -2,8 +2,9 @@
 
 + 首页
   
-  + 预览图
-   ![MUI](src/images/电商.jpg)
+  + 预览图<br>
+
+    ![MUI](src/images/电商.jpg)
 
   + 焦点图
 
