@@ -1,13 +1,6 @@
 {
-    "plugins": [
-        ["component", 
-            {
-                "libraryName": "mint-ui",
-                "style": true
-            }
-        ]
-    ],
+    "plugins": [["component", {"libraryName": "mint-ui","style": true}],"transform-remove-strict-mode"],
     "ignore": [
-        "./lib/mui/mui.js"
+        "./lib/mui/js/mui.js"
     ]
 }

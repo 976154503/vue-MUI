@@ -8,19 +8,19 @@
             <router-view></router-view>
         </transition>
         <nav class="mui-bar mui-bar-tab">
-			<router-link class="mui-tab-item" to="/home">
+			<router-link class="mui-tab-item-change" to="/home">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-heart"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/member">
+			<router-link class="mui-tab-item-change" to="/member">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-rank"></span>
 				<span class="mui-tab-label">会员</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/shopcar">
+			<router-link class="mui-tab-item-change" to="/shopcar">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/search">
+			<router-link class="mui-tab-item-change" to="/search">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cate"></span>
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
@@ -34,6 +34,33 @@ export default {
 }
 </script>
 <style scoped>
+/*重新改名字*/
+.mui-bar-tab .mui-tab-item-change {
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}
+
+.mui-bar-tab .mui-tab-item-change .mui-icon {
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.mui-bar-tab .mui-tab-item-change .mui-icon ~ .mui-tab-label {
+    font-size: 11px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .app-container {
     padding: 40px 0 0 0;
     overflow-x: hidden;
@@ -43,10 +70,10 @@ export default {
     background-color: #61cee2;
 }
 
-.mui-title ,.mui-bar .mui-icon ,.mui-bar-tab .mui-tab-item {
+.mui-title ,.mui-bar .mui-icon ,.mui-bar-tab .mui-tab-item-change {
     color: #fff;
 }
-.mui-bar-tab .mui-tab-item.mui-active ,.mui-bar-tab .mui-tab-item.mui-active span.mui-icon {
+.mui-bar-tab .mui-tab-item-change.mui-active ,.mui-bar-tab .mui-tab-item-change.mui-active span.mui-icon {
     color: #7b7b7b;
 }
 .mui-bar {
@@ -65,5 +92,6 @@ export default {
 .v-enter-active,.v-leave-active {
     transition: all 0.5s ease
 }
+
 </style>
 

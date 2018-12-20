@@ -1,16 +1,7 @@
 <template>
   <div>
-    <!-- <div class="mui-content">
-      <ul class="mui-table-view mui-table-view-chevron">
-        <li id="switch" class="mui-table-view-cell">定时轮播
-          <div class="mui-switch">
-            <div class="mui-switch-handle"></div>
-          </div>
-        </li>
-      </ul>
-    </div> -->
     <div id="slider" class="mui-slider">
-      <div class="mui-slider-group">
+      <div class="mui-slider-group mui-slider-loop">
         <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
         <div class="mui-slider-item mui-slider-item-duplicate">
           <a href="#">
@@ -53,13 +44,17 @@
       </div>
     </div>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-home"></span>
-            <div class="mui-media-body">新闻资讯</div></a>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            <router-link to="/home/newsList">
+                <span class="mui-icon mui-icon-home"></span>
+                <div class="mui-media-body">新闻资讯</div>
+            </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-email"></span>
-            <div class="mui-media-body">图片分享</div></a>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            <router-link to="/home/photosList">
+                <span class="mui-icon mui-icon-email"></span>
+                <div class="mui-media-body">图片分享</div>
+            </router-link>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
             <span class="mui-icon mui-icon-chatbubble"></span>
@@ -82,6 +77,8 @@
 </template>
 <script>
 import {Toast} from 'mint-ui'
+import mui from '../../lib/mui/js/mui.js'
+
 export default {
     data() {
         return {}
@@ -89,8 +86,21 @@ export default {
     created() {
         //Toast('加载成功……')
     },
-    methods: {},
-    updated() {}
+    mounted(){
+        mui.init({
+            swipeBack:true 
+        })
+        var sliderMuiObj = mui(".mui-slider");//滑动科目 
+        sliderMuiObj.slider({
+          interval: 2000  //如果你想自动3000ms滑动一下就写上这个。
+        });
+    },
+    methods: {
+        
+    },
+    updated() {
+        
+    }
 };
 </script>
 <style scoped>
