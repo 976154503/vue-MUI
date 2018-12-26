@@ -70,11 +70,18 @@ export default {
     background-color: #61cee2;
 }
 
-.mui-title ,.mui-bar .mui-icon ,.mui-bar-tab .mui-tab-item-change {
+.mui-bar-tab {
+    background-color: #f6f6f6;
+}
+.mui-title ,.mui-bar .mui-icon {
     color: #fff;
 }
+.mui-bar-tab .mui-tab-item-change ,.mui-bar-tab .mui-tab-item-change span.mui-icon{
+    color: #444;
+}
+
 .mui-bar-tab .mui-tab-item-change.mui-active ,.mui-bar-tab .mui-tab-item-change.mui-active span.mui-icon {
-    color: #7b7b7b;
+    color: orangered;
 }
 .mui-bar {
     -webkit-box-shadow: none;

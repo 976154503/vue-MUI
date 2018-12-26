@@ -210,6 +210,9 @@ export default {
     .mui-grid-view.mui-grid-12 .mui-media:nth-child(6) .mui-icon {
         background-color: #6c85f7;
     }
+    .mui-grid-view.mui-grid-12 .mui-media:nth-child(8) .mui-icon {
+        background-color: #00bd1e;
+    }
     .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
         font-size: 12px;
     }
@@ -240,7 +243,7 @@ export default {
     }
     .mui-media-body {
         font-size: 13px;
-        color: #f5c48b;
+        color: #333;
     }
     .mui-table-view-cell p {
         font-size: 12px;
