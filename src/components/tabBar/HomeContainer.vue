@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div id="slider" class="mui-slider">
+    <!-- <div id="slider" class="mui-slider">
       <div class="mui-slider-group mui-slider-loop">
-        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+        额外增加的一个节点(循环轮播：第一个节点是最后一张轮播)
         <div class="mui-slider-item mui-slider-item-duplicate">
           <a href="#">
             <img src="../../images/girl.jpg">
           </a>
         </div>
-        <!-- 第一张 -->
+        第一张
         <div class="mui-slider-item">
           <a href="#">
             <img src="../../images/shuijiao.jpg">
@@ -29,7 +29,7 @@
             <img src="../../images/yuantiao.jpg">
           </a>
         </div>
-        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+        额外增加的一个节点(循环轮播：最后一个节点是第一张轮播)
         <div class="mui-slider-item mui-slider-item-duplicate">
           <a href="#">
             <img src="../../images/shuijiao.jpg">
@@ -42,7 +42,8 @@
         <div class="mui-indicator"></div>
         <div class="mui-indicator"></div>
       </div>
-    </div>
+    </div> -->
+    <swiper :lunbotuList="this.lunbotuList" :isfull="true"></swiper>
     <ul class="mui-table-view mui-grid-view mui-grid-12">
         <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
             <router-link to="/home/newsList">
@@ -129,28 +130,38 @@
 <script>
 import {Toast} from 'mint-ui'
 import mui from '../../lib/mui/js/mui.js'
+import swiper from '../../subcomponents/swiper.vue'
 
 export default {
     data() {
-        return {}
+        return {
+            lunbotuList:[]
+        }
     },
     created() {
+        this.getlunbotu();
         //Toast('加载成功……')
     },
-    mounted(){
-        mui.init({
-            swipeBack:true 
-        })
-        var sliderMuiObj = mui(".mui-slider");//滑动科目 
-        sliderMuiObj.slider({
-          interval: 2000  //如果你想自动3000ms滑动一下就写上这个。
-        });
-    },
     methods: {
-        
+        getlunbotu() {
+            this.$http.get("/static/getimgcategory.json").then(result => {
+                if (result.body.status == 0) {
+                    result.body.message.forEach(item => {
+                        item.img = item.images;
+                        item.url = item.images;
+                    });
+                    this.lunbotuList = result.body.message;
+                } else {
+                    Toast("加载失败……");
+                }
+            });
+        }
     },
     updated() {
         
+    },
+    components: {
+        swiper
     }
 };
 </script>

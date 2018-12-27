@@ -13,6 +13,8 @@ module.exports = {
 			{
 				test: /\.css$/, use: ['style-loader', 'css-loader']
 			},
+			{ test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }, // 处理 less 文件的 loader
+      		{ test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }, // 处理 scss 文件的 loader
 			{
 				test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=700'
 			},

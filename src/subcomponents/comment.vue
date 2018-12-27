@@ -7,12 +7,12 @@
         <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
 
         <div class="cmt-list">
-        <div class="cmt-item" v-for="(item, i) in comments" :key="item.add_time">
+        <div class="cmt-item" v-for="(item, i) in comments" :key="item.commentTime">
             <div class="cmt-title">
-            第{{ i+1 }}楼&nbsp;&nbsp;用户：{{ item.user_name }}&nbsp;&nbsp;发表时间：{{ item.add_time | dateFormat }}
+            第{{ i+1 }}楼&nbsp;&nbsp;用户：{{ item.userName }}&nbsp;&nbsp;发表时间：{{ item.commentTime | dateFormat }}
             </div>
             <div class="cmt-body">
-            {{ item.content === 'undefined' ? '此用户很懒，嘛都没说': item.content }}
+            {{ item.text === 'undefined' ? '此用户很懒，嘛都没说': item.text }}
             </div>
         </div>
 
@@ -38,7 +38,7 @@ export default {
         getComments() {
             // 获取评论
             this.$http
-            .get("api/getcomments/" + this.id + "?pageindex=" + this.pageIndex)
+            .get("/static/comment.json" + this.id + "?pageindex=" + this.pageIndex)
             .then(result => {
             if (result.body.status === 0) {
                 // this.comments = result.body.message;

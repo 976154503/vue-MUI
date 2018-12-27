@@ -3,13 +3,13 @@
     "message":[
         {
             "title":"新浪娱乐",
-            "id":"10",
+            "id":"1",
             "images": "../src/images/cbd.jpg"
         },
         {
             "title":"明星",
             "id":"02",
-            "images": "../src/images/cbd.jpg"
+            "images": "../src/images/shuijiao.jpg"
         },
         {
             "title":"电影",
