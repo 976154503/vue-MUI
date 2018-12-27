@@ -4,7 +4,7 @@
   
   + 预览图<br>
 
-    ![MUI](src/images/dianshang.png)
+    ![MUI](src/images/dianshang01.png)
 
   + 焦点图
 
